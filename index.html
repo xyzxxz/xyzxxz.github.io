@@ -1,12 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="lib/bootstrap4.6.2/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap-icons1.10.2/bootstrap-icons.css">
+    <script src="lib/jquery3.6.1/jquery.min.js"></script>
+    <script src="lib/bootstrap4.6.2/bootstrap.min.js"></script>
+    <script src="lib/popper.js/popper.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>首页</title>
 </head>
-<body>
-    <h1>Hello World</h1>
+
+<body class="bg-dark text-white">
+    <header class="mb-3">
+        <div class="container">
+            <nav class="navbar navbar-dark align-items-center justify-content-center justify-content-lg-start">
+                <a href="#" class="navbar-brand">xyzxxz</a>
+                <div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="./sources/linux.html">Linux</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="./sources/classifications.html">分类</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="./sources/tags.html">标签</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="./sources/digest.html">文摘</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="./sources/friendchain.html">友链</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-fill"></div>
+                <div>
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <input type="search" class="form-control form-control-dark" placeholder="Search..."
+                            aria-label="Search" />
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div id="card" class="col">
+                    <nav id="logo">
+                        <div class="col text-center">
+                            <img src="img/logo.jpg" class="img-fluid rounded-pill">
+                            <p class="h3">xyzxxz</p>
+                            <p>
+                                <i class="bi bi-geo-alt"></i><span>许昌</span>
+                            </p>
+                        </div>
+                    </nav>
+                </div>
+                <div>
+                    <nav class="row">
+                        <div class="col text-center">
+                            <p>文章</p>
+                            <a href="./sources/articles.html">
+                                <p class="title">0</p>
+                            </a>
+                        </div>
+                        <div class="col text-center">
+                            <p>标签</p>
+                            <a href="./sources/tags.html">
+                                <p class="title">0</p>
+                            </a>
+                        </div>
+                        <div class="col text-center">
+                            <p>分类</p>
+                            <a href="./sources/classifications.html">
+                                <p class="title">0</p>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div class="col text-center btn btn-primary">
+                        <a href="#" class="text-white">关注我<i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div id="sayings" class="blockquote text-center">
+                    <hr>
+                    <p class="h6">
+                        喜欢上你，是良性的破窗效应。
+                    </p>
+                    <p class="blockquote-footer h6">
+                        来源《原创》
+                    </p>
+                </div>
+                <div id="tags">
+                    <h5>标签</h5>
+                    <div class="row justify-content-start btn-toolbar">
+                        <a href="" class="text-center text-white btn-group btn-group-sm mr-2">
+                            <span class="btn btn-primary">数学</span>
+                            <span class="btn btn-secondary">0</span>
+                        </a>
+                        <a href="" class="text-center text-white btn-group btn-group-sm mr-2">
+                            <span class="btn btn-primary">数学</span>
+                            <span class="btn btn-secondary">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="col-9">
+                <div class="container">
+                    <div class="card-group">
+                        <!-- new article -->
+                        <div class="card bg-dark border-0">
+                            <div class="card-header small text-info">
+                                <i class="bi bi-calendar-date"></i>2022/12/4
+                            </div>
+                            <div class="card-body">
+                                <a href="./sources/EndeavourOS.html" class="card-title h2">EndeavourOS</a>
+                                <div id="content" class="card-text text-primary">我的 Endeavouros 配置</div>
+                                <div id="tag" class="text-info">
+                                    <i class="bi bi-folder2"></i>Linux<i class="bi bi-tag"></i>linux
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="./sources/EndeavourOS.html" class="text-primary">阅读更多>></a>
+                                <div class="flex-fill"></div>
+                                <span id="time" class="small text-info">
+                                    <i class="bi bi-calendar-check"></i>2022/12/4
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
