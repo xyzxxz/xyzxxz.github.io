@@ -5,75 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../lib/bootstrap4.6.2/bootstrap.min.css">
-    <link rel="stylesheet" href="../lib/bootstrap4.6.2/bootstrap.min.js">
-    <script src="../lib/jquery3.6.1/jquery.min.js"></script>
-    <!-- 3D效果 -->
-    <script src="lib/three0.147.0/three.min.js"></script>
+    <audio id="music" src="music/ifyou.mp3" style="display: none;" preload="auto" autoplay></audio>
+    <script src="./lib/typed.js2.0.12/typed.js"></script>
+    <script src="./lib/jquery3.6.1/jquery.min.js"></script>
+    <title>圣诞树</title>
     <style>
+        body {
+            background-color: black;
+        }
+        video {
+            position: absolute;
+            z-index: -1;
+        }
+        .name {
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            left: 75%;
+            top: 25%;
+        }
     </style>
+    <script>
+    </script>
 </head>
 
-<body class="bg-dark">
-    <div id="container"></div>
+<body>
+    <video id="chris" height="100%" muted autoplay>
+        <source src="video/chris.mp4" type="video/mp4">
+    </video>
+
+    <div class="name"></div>
+
     <script>
-        // init
-        const container = document.getElementById('container');
-
-        // 渲染器
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        container.appendChild(renderer.domElement);
-
-        // 场景
-        const scene = new THREE.Scene();
-
-        // 相机
-        const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 500);
-        camera.position.set(0, -5, 20);
-        // 材质
-        const material = new THREE.MeshBasicMaterial({
-            color: 0xFF0000,
-            flatShading: true,
+        var typed = new Typed('.name', {
+            strings: ['','王晓莹'],
+            typeSpeed: 100,
+            showCursor: false,
+            startDelay: 8000
         });
-
-        const shape = new THREE.Shape();
-        const x=-2.5;
-        const y=-5;
-        shape.moveTo(x + 2.5, y + 2.5);
-        shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
-        shape.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5);
-        shape.bezierCurveTo(x - 3, y + 5.5, x - 1.5, y + 7.7, x + 2.5, y + 9.5);
-        shape.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 4.5, x + 8, y + 3.5);
-        shape.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y);
-        shape.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5);
-
-        const extrudeSettings = {
-            steps: 2,  // ui: steps
-            depth: 2,  // ui: depth
-            bevelEnabled: true,  // ui: bevelEnabled
-            bevelThickness: 1,  // ui: bevelThickness
-            bevelSize: 1,  // ui: bevelSize
-            bevelSegments: 2,  // ui: bevelSegments
-        };
-
-        const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-
-        const cube = new THREE.Mesh(geometry, material);
-        cube.rotation.x = 3
-
-        scene.add(cube);
-
-        function render(time) { 
-            time *= 0.001;
-            // cube.rotation.x = time;
-            cube.rotation.y = time;
-            renderer.render(scene, camera);
-            requestAnimationFrame(render);
-        }    
-        requestAnimationFrame(render);
+    </script>
+    <script>
+        window.onload = function(){
+            document.getElementById('music').play();
+        }
     </script>
 </body>
+
 
 </html>
