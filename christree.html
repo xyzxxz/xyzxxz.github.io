@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<audio id="music" src="music/ifyou.mp3" style="display: none;" preload="auto" autoplay></audio>
+		<script src="./lib/typed.js2.0.12/typed.js"></script>
+		<script src="./lib/jquery3.6.1/jquery.min.js"></script>
+		<title>圣诞树</title>
+		<style>
+			body {
+				background-color: black;
+			}
+            
+            .video {
+                z-index: -1;
+                width: 100%;
+                position: relative;
+            }
+            video {
+                width: 100%;
+            }
+            
+            .text {
+                font-size: 30px;
+                color: white;
+                z-index: 1;
+                text-align: center;
+                position: relative;
+                top: 25%;
+            }
+		</style>
+		<script>
+		</script>
+	</head>
+
+	<body>
+		<div class="video">
+			<video id="chris" muted autoplay>
+				<source src="video/chris.mp4" type="video/mp4">
+			</video>
+		</div>
+        <div class="text">
+            <div class="name"></div>
+        </div>
+        
+		<script>
+			var typed = new Typed('.name', {
+				strings: ['', '王晓莹'],
+				typeSpeed: 100,
+				showCursor: false,
+				startDelay: 8000
+			});
+		</script>
+		<script>
+			window.onload = function() {
+				document.getElementById('music').play();
+			}
+            $('body').animate({
+                scrollTop
+            });
+		</script>
+	</body>
+</html>
